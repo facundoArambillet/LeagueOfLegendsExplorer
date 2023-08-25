@@ -1,10 +1,8 @@
 # League Of Legends Explorer
 
-_Este proyecto es una web para explorar los objetos y campeones del juego League of Legends_
+Este proyecto es una web para explorar los objetos y campeones del juego League of Legends
 
 ### Instalación 🔧
-
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
 
 _Instala Maven en tu pc_
 
@@ -12,22 +10,22 @@ _Instala Maven en tu pc_
 https://maven.apache.org/download.cgi
 ```
 
-_Una vez instalado dirigirse a la carpeta LeagueItemExplorerJAR y ejecutar el comando _
+Una vez instalado dirigirse a la carpeta LeagueItemExplorerJAR y ejecutar el comando
 
 ```
 mvn clean install
 ```
 
-_Abrir LeagueItemExplorer para que se carguen las dependencias _
+Abrir LeagueItemExplorer para que se carguen las dependencias
 
-_Una vez finalizada la carga correr el servidor_
+Una vez finalizada la carga correr el servidor
 
-_Abrir LeagueItemExplorerFront y ejecutar el comando _
+Abrir LeagueItemExplorerFront y ejecutar el comando
 
 ```
 npm install
 ```
-_Una vez finalizada la instalacion ejecutar el comando_
+Una vez finalizada la instalacion ejecutar el comando
 
 ```
 ng serve
@@ -35,10 +33,10 @@ ng serve
 
 ## Construido con 🛠️
 
-  # Front-end
+# Front-end
 * [Angular](https://angular.io/docs) - Framework TypeScrypt 
 * [Boostrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/) - Biblioteca de estilos
-  # Back-end
+# Back-end
 * [SpringBoot](https://spring.io/projects/spring-boot) - Framework Java 
 * [Maven](https://maven.apache.org/) - Manejador de dependencias
 
