@@ -43,14 +43,6 @@ public class ServerConfig implements WebMvcConfigurer {
         );
     }
 
-//    @Override
-//    public void addCorsMappings(CorsRegistry registry) {
-//        registry.addMapping("/**") // permite CORS para todas las rutas
-//                .allowedOrigins("http://localhost:4200") // permite solo solicitudes desde localhost:4200
-//                .allowedMethods("GET", "POST", "PUT", "DELETE") // permite solo los métodos GET, POST, PUT y DELETE
-//                .allowedHeaders("*")// permite todos los encabezados
-//                .allowCredentials(true);
-//    }
     @Bean
     public CorsFilter corsFilter() {
         UrlBasedCorsConfigurationSource source =
@@ -69,12 +61,8 @@ public class ServerConfig implements WebMvcConfigurer {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers(HttpMethod.OPTIONS).permitAll()
                         .anyRequest().authenticated()
-                        //Si quiero autenticar tengo que habilitar el .cors() porque sino me tira error
-                        //.anyRequest().authenticated()
+
                 )
-                //Si no agrego esto que esta deprecated no funciona y no entiendo porque
-//                .cors()
-//                .and()
                 .csrf(csrf -> csrf.disable())
                 .formLogin(Customizer.withDefaults())
                 .httpBasic(Customizer.withDefaults());

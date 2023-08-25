@@ -13,12 +13,15 @@ public class ChampionController {
     @Autowired
     private ChampionService championService;
 
-    @GetMapping()
+    @GetMapping
     public Object getAll() {return this.championService.getAll();}
+
     @GetMapping("/{name}")
     public Object getByName(@PathVariable String name) {return this.championService.getByName(name);}
+
     @GetMapping("/tags")
     public Object getAllTags() {return this.championService.getAllTags();}
+
     @GetMapping("/tags/{tag}")
     public Object getAllByTag(@PathVariable String tag) {return this.championService.getChampionsByTag(tag);}
 }

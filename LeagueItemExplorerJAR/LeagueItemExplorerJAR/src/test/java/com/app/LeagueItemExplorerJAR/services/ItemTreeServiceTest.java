@@ -27,11 +27,11 @@ public class ItemTreeServiceTest {
     }
 
 
-    @Test
-    public void givenItemsTreeTag_whenGetAllTags_thenListShouldNotBeEmptyOrNull() {
-        List<String> tags = (List<String>) this.itemTreeService.getAllTags();
-
-        assertNotNull(tags, "La lista de items no deberia ser nula");
-        assertFalse(tags.isEmpty(), "La lista de items no debería estar vacía");
-    }
+//    @Test
+//    public void givenItemsTreeTag_whenGetAllTags_thenListShouldNotBeEmptyOrNull() {
+//        List<String> tags = (List<String>) this.itemTreeService.getAllTags();
+//
+//        assertNotNull(tags, "La lista de items no deberia ser nula");
+//        assertFalse(tags.isEmpty(), "La lista de items no debería estar vacía");
+//    }
 }

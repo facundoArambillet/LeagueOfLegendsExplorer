@@ -3,6 +3,10 @@ package com.app.LeagueItemExplorerJAR.services;
 import com.app.LeagueItemExplorerJAR.errors.ErrorNotFound;
 import com.app.LeagueItemExplorerJAR.errors.ErrorResponse;
 import com.app.LeagueItemExplorerJAR.models.*;
+
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
@@ -12,6 +16,7 @@ import java.util.*;
 
 @Service
 public class ChampionService {
+    private static final Logger logger =  LogManager.getLogger(ChampionService.class);
     @Value("${championsUrl}")
     private String url;
 
@@ -20,11 +25,10 @@ public class ChampionService {
             String urlAll = this.url + "champion.json";
             RestTemplate restTemplate = new RestTemplate();
             ChampionInfo response = restTemplate.getForEntity(urlAll,ChampionInfo.class).getBody();
-            Map<String, ChampionData> champions = response.getData();
 
-            return champions;
-        }catch (HttpClientErrorException e) {
-            System.out.println(e);
+            return  response.getData();
+        } catch (HttpClientErrorException e) {
+            logger.info(e.getMessage());
             throw new ErrorResponse(e.getStatusCode(),e.getMessage());
         }
 
@@ -36,12 +40,11 @@ public class ChampionService {
             RestTemplate restTemplate = new RestTemplate();
             ChampionInfoExtended response = restTemplate.getForEntity(urlByName,ChampionInfoExtended.class).getBody();
 
-            Map<String, ChampionDataExtended> champion = response.getData();
-            return champion;
+            return response.getData();
 
-        }catch (HttpClientErrorException e) {
-            System.out.println(e);
-            throw new ErrorNotFound(e.getStatusCode(),e.getMessage());
+        } catch (HttpClientErrorException e) {
+            logger.info(e.getMessage());
+            throw new ErrorNotFound(e.getMessage());
         }
 
     }
@@ -59,8 +62,8 @@ public class ChampionService {
                 }
             }
             return tags;
-        }catch (HttpClientErrorException e) {
-            System.out.println(e);
+        } catch (HttpClientErrorException e) {
+            logger.info(e.getMessage());
             return new ErrorResponse(e.getStatusCode(),e.getMessage());
         }
 
@@ -80,8 +83,8 @@ public class ChampionService {
                 }
             }
             return championsByTag;
-        }catch (HttpClientErrorException e) {
-            System.out.println(e);
+        } catch (HttpClientErrorException e) {
+            logger.info(e.getMessage());
             return new ErrorResponse(e.getStatusCode(),e.getMessage());
         }
 

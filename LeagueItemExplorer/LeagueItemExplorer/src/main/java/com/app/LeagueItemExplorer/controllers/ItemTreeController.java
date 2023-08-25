@@ -12,10 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class ItemTreeController {
     @Autowired
     private ItemTreeService itemTreeService;
-    @GetMapping()
+
+    @GetMapping
     public Object getAll() {
         return itemTreeService.getAll();
     }
+
     @GetMapping("/tags")
     public Object getAllTags() {
         return itemTreeService.getAllTags();

@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class ItemDataController {
     @Autowired
     private ItemDataService itemDataService;
-    @GetMapping()
+
+    @GetMapping
     public Object getAll() {
         return itemDataService.getAll();
     }
