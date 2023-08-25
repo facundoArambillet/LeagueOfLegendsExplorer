@@ -4,7 +4,7 @@ Este proyecto es una web para explorar los objetos y campeones del juego League 
 
 ### Instalación 🔧
 
-_Instala Maven en tu pc_
+Instala Maven en tu pc
 
 ```
 https://maven.apache.org/download.cgi
@@ -33,9 +33,10 @@ ng serve
 
 ## Construido con 🛠️
 
-# Front-end
+  # Front-end
 * [Angular](https://angular.io/docs) - Framework TypeScrypt 
 * [Boostrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/) - Biblioteca de estilos
+ 
 # Back-end
 * [SpringBoot](https://spring.io/projects/spring-boot) - Framework Java 
 * [Maven](https://maven.apache.org/) - Manejador de dependencias
