@@ -3,6 +3,7 @@ package com.app.LeagueItemExplorerJAR.services;
 import com.app.LeagueItemExplorerJAR.errors.ErrorNotFound;
 import com.app.LeagueItemExplorerJAR.errors.ErrorResponse;
 import com.app.LeagueItemExplorerJAR.models.*;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
@@ -11,7 +12,8 @@ import java.util.*;
 
 @Service
 public class ChampionService {
-    private final String url = "http://ddragon.leagueoflegends.com/cdn/13.16.1/data/en_US/";
+    @Value("${championsUrl}")
+    private String url;
 
     public Object getAll() {
         try {

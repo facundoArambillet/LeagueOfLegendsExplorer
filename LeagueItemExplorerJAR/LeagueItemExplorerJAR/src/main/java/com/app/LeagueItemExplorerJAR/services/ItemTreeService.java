@@ -3,6 +3,7 @@ package com.app.LeagueItemExplorerJAR.services;
 import com.app.LeagueItemExplorerJAR.errors.ErrorResponse;
 import com.app.LeagueItemExplorerJAR.models.ItemInfo;
 import com.app.LeagueItemExplorerJAR.models.ItemTree;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
@@ -12,7 +13,8 @@ import java.util.List;
 
 @Service
 public class ItemTreeService {
-    private final String url = "http://ddragon.leagueoflegends.com/cdn/13.16.1/data/en_US/item.json";
+    @Value("${itemsUrl}")
+    private String url;
     public Object getAll() {
         try{
             RestTemplate restTemplate = new RestTemplate();

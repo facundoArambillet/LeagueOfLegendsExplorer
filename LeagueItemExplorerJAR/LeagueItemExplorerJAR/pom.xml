@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.app</groupId>
 	<artifactId>LeagueItemExplorerJAR</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>LeagueItemExplorerJAR</name>
 	<description>Application to connect with the riot items API</description>
 	<properties>

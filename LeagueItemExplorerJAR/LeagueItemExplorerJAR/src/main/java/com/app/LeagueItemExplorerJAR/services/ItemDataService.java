@@ -4,6 +4,7 @@ import com.app.LeagueItemExplorerJAR.errors.ErrorNotFound;
 import com.app.LeagueItemExplorerJAR.errors.ErrorResponse;
 import com.app.LeagueItemExplorerJAR.models.ItemData;
 import com.app.LeagueItemExplorerJAR.models.ItemInfo;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
@@ -13,7 +14,8 @@ import java.util.*;
 
 @Service
 public class ItemDataService {
-    private final String url = "http://ddragon.leagueoflegends.com/cdn/13.16.1/data/en_US/item.json";
+    @Value("${itemsUrl}")
+    private String url;
     public Object getAll() {
         try {
             RestTemplate restTemplate = new RestTemplate();
