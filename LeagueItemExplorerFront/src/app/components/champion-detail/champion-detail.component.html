@@ -3,12 +3,12 @@
     <div class="champion-content-container ">
 
         <div class="champion-content-header">
-            <div class="d-flex align-items-center" style="margin-right: 2%;">
+            <div class="d-flex align-items-center">
                 <div class="champion-content-header-image">
                     <img src={{championImage}} width="300px" height="200px">
                 </div>
 
-                <div class="champion-content-title" style="padding-left: 5%;">
+                <div class="champion-content-title">
                     <div class="mb-3">
                         <h2>{{championName}}</h2>
                     </div>
@@ -16,7 +16,7 @@
                         <h4>{{championTitle}}</h4>
                     </div>
                     <div class="mb-3">
-                        <a *ngFor="let tagImage of tagsImages" style="margin-right: 15px;"> <img src={{tagImage}} alt=""
+                        <a *ngFor="let tagImage of tagsImages"> <img src={{tagImage}} alt=""
                                 width="30px" height="30px"></a>
                     </div>
                     <div class="mb-3">
@@ -32,6 +32,7 @@
                 <h1>Abilities</h1>
             </div>
             <div class="champion-content-abilities-body">
+
                 <div class="champion-card-section">
                     <div class="container-fluid">
                         <div class="d-flex justify-content-center mb-4">
@@ -43,7 +44,7 @@
                                     <div class=" mt-2">
                                         <img src={{championImagePassive}} alt="" srcset="" width="100px" height="100px">
                                     </div>
-                                    <div style="margin-left: 2%;">
+                                    <div class="champion-text">
                                         <strong>{{championPassive.name}}</strong>
                                         <p> {{championPassiveWithoutTags}}</p>
                                     </div>
@@ -73,7 +74,7 @@
                                         <div class=" mt-2">
                                             <img src={{loadImageSpell(spell)}} alt="" width="100px" height="100px">
                                         </div>
-                                        <div style="margin-left: 2%;">
+                                        <div class="champion-text">
                                             <strong>{{spell.name}}</strong>
                                             <!-- <p>Cooldowns: {{spell.cooldownBurn}}</p> -->
                                             <p>{{spell.description}}</p>
@@ -90,14 +91,9 @@
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
-                    <!-- <div class="champion-card-body">
-                        Aca podrian los videos de las habilidades
-                    </div> -->
-
                 </div>
+                
             </div>
         </div>
     </div>
