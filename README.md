@@ -4,11 +4,15 @@ Este proyecto es una web para explorar los objetos y campeones del juego League 
 
 ### Instalación 🔧
 
-Instala Maven en tu pc
+Instala Maven en tu pc(descargar -bin.zip)
 
 ```
 https://maven.apache.org/download.cgi
 ```
+Agrega maven al PATH de tu sistema
+  -Descomprimi el archivo .zip-
+  -Copia la ruta de la carpeta-
+  -Agregala a la variable Path dentro de variables de sistema-
 
 Una vez instalado dirigirse a la carpeta LeagueItemExplorerJAR y ejecutar el comando
 
